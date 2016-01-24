@@ -163,9 +163,8 @@ def train(
 
 
 def main():
-    #init_file = 'nets/weights_mc.pickle'
     init_file = None
-    weights_file = 'nets/weights_check.pickle'
+    weights_file = 'nets/weights.pickle'
     print('loading train/valid data...')
     X_train, X_valid, y_train, y_valid = utils.load_train_val(
         'data/cifar-10-batches-py')
