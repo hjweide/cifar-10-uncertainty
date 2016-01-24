@@ -14,5 +14,7 @@ to generate a directory creating the misclassifications from CIFAR-100.  Finally
 run `python train.py` to plot the image grids.
 
 Those interested in further reading, should visit:
+
 1. [What My Deep Model Doesn't Know...](http://mlg.eng.cam.ac.uk/yarin/blog_3d801aa532c1ce.html)
+
 2. [Bayesian Convolutional Neural Networks with Bernoulli Approximate Variational Inference](http://arxiv.org/abs/1506.02158)
