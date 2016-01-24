@@ -9,8 +9,10 @@ To run the code, first download the
 sets.  Extract them, and put them in a directory _data_ as _data/cifar-10-batches-py_ and _data/cifar-100-python_.
 
 Configure the parameters in _train.py_ (or leave them as the default) and
-create a directory _nets_ for the learned weights to be written to.  Finally,
-run `python train.py`.
+create a directory _nets_ for the learned weights to be written to.  Run `python inference.py`
+to generate a directory creating the misclassifications from CIFAR-100.  Finally,
+run `python train.py` to plot the image grids.
 
-Once the training is complete, run `python plot.py` to generate the plots of misclassifications
-with low uncertainty.
+Those interested in further reading, should visit:
+[What My Deep Model Doesn't Know...](http://mlg.eng.cam.ac.uk/yarin/blog_3d801aa532c1ce.html)
+[Bayesian Convolutional Neural Networks with Bernoulli Approximate Variational Inference](http://arxiv.org/abs/1506.02158)
