@@ -77,36 +77,6 @@ def create_iter_funcs_valid(l_out, bs=None, N=50, mc_dropout=False):
     return valid_iter
 
 
-def create_iter_funcs_bayes_valid(l_out, bs, N=50):
-    X = T.tensor4('X')
-    y = T.ivector('y')
-    X_batch = T.tensor4('X_batch')
-    y_batch = T.ivector('y_batch')
-
-    X_repeat = T.extra_ops.repeat(X, N, axis=0)
-    y_hat = layers.get_output(
-        l_out, X_repeat, deterministic=False)
-
-    sizes = [X_repeat.shape[0] / X.shape[0]] * bs
-    y_hat_split = T.as_tensor_variable(T.split(y_hat, sizes, bs, axis=0))
-    y_mean = T.mean(y_hat_split, axis=1)
-    valid_loss = T.mean(
-        T.nnet.categorical_crossentropy(y_mean, y))
-    valid_acc = T.mean(
-        T.eq(y_mean.argmax(axis=1), y))
-
-    valid_iter = theano.function(
-        inputs=[theano.Param(X_batch), theano.Param(y_batch)],
-        outputs=[valid_loss, valid_acc],
-        givens={
-            X: X_batch,
-            y: y_batch,
-        },
-    )
-
-    return valid_iter
-
-
 def create_iter_funcs_test(l_out, bs, N=50):
     X = T.tensor4('X')
     X_batch = T.tensor4('X_batch')

@@ -11,7 +11,6 @@ def build(bs, num_out):
     conv = {
         'filter_size': (5, 5), 'stride': (1, 1), 'pad': 2, 'num_filters': 192,
         'W': GlorotUniform(gain='relu'), 'nonlinearity': identity,  # for LeNet
-        #'W': GlorotUniform(gain='relu'), 'nonlinearity': rectify,
     }
     pool = {'pool_size': (2, 2), 'stride': (2, 2)}
     drop = {'p': 0.5}
