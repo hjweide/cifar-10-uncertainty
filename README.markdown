@@ -1,7 +1,7 @@
 # Quantifying Uncertainty in Neural Networks
 
 This is the code used in the experiments described in the blog post [Quantifying
-Uncertainty in Neural Networks](http://hjweide.github.io/quantifying-uncertainty-in-neural-networks/).
+Uncertainty in Neural Networks](http://hjweide.github.io/quantifying-uncertainty-in-neural-networks).
 
 To run the code, first download the
 [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz) and
